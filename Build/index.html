@@ -76,14 +76,14 @@
 
           // Передача Telegram ID и имени пользователя в Unity
           if (telegramId) {
-            unityInstance.SendMessage("TelegramAuthorizationProvider", "Authorize", telegramId);
+            unityInstance.SendMessage("Bootstrapper", "Authorize", telegramId);
             console.log(`Telegram ID передан в Unity: ${telegramId}`);
           } else {
             console.warn('Telegram ID не был получен, не можем передать его в Unity.');
           }
 
           if (firstName) {
-            unityInstance.SendMessage("TelegramAuthorizationProvider", "SetUserName", firstName);
+            unityInstance.SendMessage("Bootstrapper", "SetUserName", firstName);
             console.log(`Имя пользователя передано в Unity: ${firstName}`);
           } else {
             console.warn('Имя пользователя не было получено, не можем передать его в Unity.');
