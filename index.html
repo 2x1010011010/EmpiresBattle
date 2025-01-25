@@ -6,7 +6,7 @@
     <title>Unity WebGL Player | EBClicker</title>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=640 height=320 tabindex="-1" style="width: 640px; height: 320px; background: #F7ECE3"></canvas>
+    <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1" style="width: 1920px; height: 1080px; background: #F7ECE3"></canvas>
     <script src="Build/EmpireBattleTest.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
@@ -25,9 +25,9 @@
       }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/EmpireBattleTest.data",
-        frameworkUrl: "Build/EmpireBattleTest.framework.js",
-        codeUrl: "Build/EmpireBattleTest.wasm",
+        dataUrl: "Build/EmpireBattleTest.data.br",
+        frameworkUrl: "Build/EmpireBattleTest.framework.js.br",
+        codeUrl: "Build/EmpireBattleTest.wasm.br",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "EBClicker",
