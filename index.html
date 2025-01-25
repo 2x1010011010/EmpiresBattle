@@ -6,8 +6,8 @@
     <title>Unity WebGL Player | EBClicker</title>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
-    <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1" style="width: 1920px; height: 1080px; background: #F7ECE3"></canvas>
-    <script src="Build/02cbca31a0c1e949f10c9b2b7b755307.loader.js"></script>
+    <canvas id="unity-canvas" width=640 height=320 tabindex="-1" style="width: 640px; height: 320px; background: #F7ECE3"></canvas>
+    <script src="Build/EmpireBattleTest.loader.js"></script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -25,13 +25,13 @@
       }
 
       createUnityInstance(document.querySelector("#unity-canvas"), {
-        dataUrl: "Build/75b3a0e758d343c76698a74714979d9d.data.unityweb",
-        frameworkUrl: "Build/48bbdd188ebc0b88e2e2bf96586fe83c.framework.js.unityweb",
-        codeUrl: "Build/941e517041efcf72c8d79247623e92dc.wasm.unityweb",
+        dataUrl: "Build/EmpireBattleTest.data",
+        frameworkUrl: "Build/EmpireBattleTest.framework.js",
+        codeUrl: "Build/EmpireBattleTest.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "EBClicker",
-        productVersion: "0.2.7[263]",
+        productVersion: "0.1",
         // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
         // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
       });
