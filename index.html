@@ -245,7 +245,7 @@
     </div>
 
     <!-- Загрузка Unity Loader -->
-    <script src="Build/EmpireBattleTest 3.loader.js"></script>
+    <script src="Build/EmpireBattleTest.loader.js"></script>
     <script>// Получение элементов DOM
         var container = document.querySelector("#unity-container");
         var canvas = document.querySelector("#unity-canvas");
@@ -315,14 +315,14 @@
             showBanner: unityShowBanner,
         };
 
+
         // Список сообщений для загрузки
         const loadingTips = [
-            "Connecting to servers...",
-            "Loading resources...",
-            "Setting up the game world...",
-            "Preparing your character...",
-            "Optimizing performance...",
-            "Finalizing settings..."
+            ".Loading.",
+            "..Loading..",
+            "...Loading...",
+            "....Loading...."
+
         ];
         let currentTip = 0;
 
@@ -341,24 +341,21 @@
 
         // Обработка адаптивного дизайна для мобильных устройств
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            var meta = document.createElement('meta');
-            meta.name = 'viewport';
-            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-            document.getElementsByTagName('head')[0].appendChild(meta);
-            container.className = "unity-mobile";
+        // Mobile device style: fill the whole browser client area with the game canvas:
+        var meta = document.createElement('meta');
+        meta.name = 'viewport';
+        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
+        document.getElementsByTagName('head')[0].appendChild(meta);
 
-            canvas.style.width = window.innerWidth + 'px';
-            canvas.style.height = window.innerHeight + 'px';
+        var canvas = document.querySelector("#unity-canvas");
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
+        canvas.style.position = "fixed";
 
-            window.addEventListener('resize', () => {
-                canvas.style.width = window.innerWidth + 'px';
-                canvas.style.height = window.innerHeight + 'px';
-                // При необходимости можно добавить логику для адаптации Unity
-            });
-        } else {
-            canvas.style.width = "900";
-            canvas.style.height = "640";
-        }
+        document.body.style.textAlign = "left";
+
+        document.documentElement.requestFullscreen();
+      }
 
         // Показываем прогресс-бар и спиннер
         loadingBar.style.display = "block";
