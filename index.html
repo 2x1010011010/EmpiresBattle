@@ -3,10 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | EBClicker</title>
+    <title>Unity WebGL Player | Empire's Battle</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <!-- Подключение Telegram Web Apps JavaScript API (если необходимо) -->
-    <!-- <script src="https://telegram.org/js/telegram-web-app.js"></script> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <style>
         /* Основные стили для загрузочного экрана */
@@ -217,7 +215,7 @@
 <body>
     <div id="unity-container">
         <!-- Канвас Unity -->
-        <canvas id="unity-canvas" width="960" height="600"></canvas>
+        <canvas id="unity-canvas" width=900 height=640></canvas>
 
         <!-- Спиннер -->
         <div id="spinner"></div>
@@ -230,19 +228,10 @@
         <!-- Логотип (опционально) -->
         <div id="unity-logo"></div>
 
-        <!-- Динамические сообщения -->
-        <div id="loading-messages">Загрузка игры...</div>
+        <div id="loading-messages">Loading</div>
 
         <!-- Предупреждения -->
         <div id="unity-warning"></div>
-
-        <!-- Футер Unity -->
-        <div id="unity-footer">
-            <div id="unity-webgl-logo"></div>
-            <div id="unity-fullscreen-button" title="Полноэкранный режим"></div>
-            <div id="unity-build-title">EBClicker</div>
-        </div>
-    </div>
 
     <!-- Загрузка Unity Loader -->
     <script src="Build/EmpireBattleTest.loader.js"></script>
@@ -394,15 +383,10 @@
                 loadingBar.style.display = "none";
                 spinner.style.display = "none";
                 loadingMessages.style.display = "none";
-                if (unityLogo) unityLogo.style.display = "none";
-
-                // Отображение футера Unity (если необходимо)
-                unityFooter.style.display = "flex";
+                unityLogo.style.display = "none";
 
                 // Обработчик клика на кнопку полноэкранного режима
-                fullscreenButton.onclick = () => {
-                    unityInstance.SetFullscreen(1);
-                };
+                unityInstance.SetFullscreen(1);
             }).catch((message) => {
                 alert(`Ошибка при инициализации Unity: ${message}`);
             });
