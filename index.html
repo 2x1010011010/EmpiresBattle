@@ -240,7 +240,6 @@
         var canvas = document.querySelector("#unity-canvas");
         var loadingBar = document.querySelector("#unity-loading-bar");
         var progressBarFull = document.querySelector("#unity-progress-bar-full");
-        var fullscreenButton = document.querySelector("#unity-fullscreen-button");
         var warningBanner = document.querySelector("#unity-warning");
         var loadingMessages = document.querySelector("#loading-messages");
         var spinner = document.querySelector("#spinner");
@@ -367,7 +366,6 @@
                 loadingMessages.style.display = "none";
                 unityLogo.style.display = "none";
 
-                unityInstance.SetFullscreen(1);
             }).catch((message) => {
                 alert(`Ошибка при инициализации Unity: ${message}`);
             });
