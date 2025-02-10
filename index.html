@@ -338,7 +338,7 @@
         var canvas = document.querySelector("#unity-canvas");
         canvas.style.width = "100%";
         canvas.style.height = "100%";
-        canvas.style.position = "fixed";
+        canvas.style.position = "absolute";
 
         document.body.style.textAlign = "left";
 
@@ -349,7 +349,7 @@
         loadingBar.style.display = "block";
         spinner.style.display = "block";
         loadingMessages.style.display = "block";
-        if (unityLogo) unityLogo.style.display = "block";
+        unityLogo.style.display = "block";
 
         // Загрузка скрипта Unity Loader
         var script = document.createElement("script");
