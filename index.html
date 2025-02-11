@@ -330,6 +330,8 @@
                 loadingMessages.style.display = "none";
                 unityLogo.style.display = "none";
 
+                unityInstance.SetFullscreen(1);
+
             }).catch((message) => {
                 alert(`Ошибка при инициализации Unity: ${message}`);
             });
